@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+	<title>Warcraft III Library</title>
+	<link rel="stylesheet" type="text/css" href="/web/20170418224204cs_/https://wc3lib.org/style.css"/>
+</head>
+<body>
+<nav>
+	<ul>
+		<li>
+			<a href="index.html">wc3lib</a>
+		</li>
+		<li>
+			<a href="https://gitweb.wc3lib.org/">source code</a>
+		</li>
+		<li>
+			<a href="api/html/index.html">API</a>
+		</li>
+		<li>
+			The Power of Fire
+		</li>
+		<li>
+			<a href="maps.html">maps</a>
+		</li>
+		<li>
+			<a href="vjass.html">Advanced Script Library</a>
+		</li>
+		<li>
+			<a href="https://diemachtdesfeuers.wordpress.com/">blog</a>
+		</li>
+		<li>
+			<a href="spec.html">tools and specifications</a>
+		</li>
+		<li>
+			<a href="https://gustavsfairyland.wordpress.com/">Gustav's Fairyland</a>
+		</li>
+		<li>
+			<a href="https://thecity.wc3lib.org/">The City</a>
+		</li>
+		<li>
+			<a href="https://tamino.wc3lib.org/">personal website</a>
+		</li>
+		<li>
+			<a href="ebuilds.html">ebuilds</a>
+		</li>
+		<li>
+			<a href="https://blizzard.com/games/war3/">Warcraft III</a>
+		</li>
+	</ul>
+</nav>
+<div id="main_content">
+	<h1>The Power of Fire</h1>
+	<p>
+		The Power of Fire (German Die Macht des Feuers) is a Warcraft III: The Frozen Throne multiplayer RPG mod which allows up to six human players the share a co-op adventure in a fantasy world.
+		It is realized by providing a custom .exe file which loads a custom MPQ archive. All participants need to download this .exe file and share the same MPQ archive.
+		The map itself is relativly small like any other Warcraft III map.
+	</p>
+	<h2>Modification</h2>
+	<p>
+		<a href="http://www.moddb.com/mods/warcraft-iii-the-power-of-fire/downloads/the-power-of-fire-09">Installation Setup</a>
+
+		<br/>
+		<br/>
+		Download the installation setup and run it. Select your Warcraft III: The Frozen Throne directory as installation destination directory.
+		The setup installs "The Power of Fire.exe" into your Frozen Throne directory and adds a symbolic link to your desktop.
+		If you run "The Power of Fire.exe" you can start a custom game and select one of the maps in the subfolder "The Power of Fire".
+	</p>
+	<h2>Problems with Windows 8 and 10</h2>
+	<p>
+		The modification might have problems on Windows 8 or Windows 10. The game might freeze on starting "The Power of Fire.exe".
+		One possible solution is to start "regedit.exe" and to go the the path "HKEY_CURRENT_USER\Software\Blizzard Entertainment\Warcraft III" and add the Registry entry "Allow Local Files" of type DWORD (32 Bit) with the value 1.
+		Warcraft III loads all local files of the Warcraft III directory now. Therefore you have the extract the files of the MPQ archive "The Power of Fire.exe" into the Warcraft III directory. Use a tool like <a href="http://www.hiveworkshop.com/forums/tools-560/mpq-master-v1-2-0-a-62935/">this</a>.
+		Check <a href="http://www.hiveworkshop.com/forums/world-editor-help-zone-98/allow-local-files-not-working-windows7-248349/">this</a> out for further information.
+	</p>
+	<h2>Patch Error</h2>
+	<p>
+		If your Warcraft III has not been installed properly the registry entries might be missing. In this case the error "War3Patch not found" might appear when you start "The Power of Fire.exe".
+		Use <a href="http://www.hiveworkshop.com/forums/tools-560/warcraft-iii-registry-fixer-1-0-a-62929/">this</a> tool to fix your registry entries and start "The Power of Fire.exe" afterwards. It should work now.
+	</p>
+	<h2>Older Versions</h2>
+	<p>
+		Older versions of the modification can be found <a href="./dmdf/mods/">here</a> or <a href="http://www.moddb.com/mods/warcraft-iii-the-power-of-fire/downloads">here</a> and older versions of the maps can be found <a href="./dmdf/maps">here</a>.
+	</p>
+	<h2>Source Code</h2>
+	<p>
+		Use the following command to check out the latest source code:
+	</p>
+	<code>
+		git clone git://wc3lib.org/dmdf.git
+	</code>
+	<h2>Resources</h2>
+	<p>
+		For getting all the resources download the latest <a href="http://www.moddb.com/mods/warcraft-iii-the-power-of-fire/downloads/the-power-of-fire-development-version-09">Development KIT</a>. It contains the MPQ archive "TPoF.mpq" which contains all models and textures etc. as well as the source code of the modification, the ASL and all the maps and campaigns.
+	</p>
+	<h2>Media</h2>
+	Videos on YouTube:
+	<ul>
+		<li>
+			<a href="https://www.youtube.com/watch?v=SbmIY0ly4gU&amp;list=PLmfeGbBvSVGCDyp2bHGmHrhdJWN9TQLCn&amp;index=9">Promotion videos</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/watch?v=z1mLXBc3jRE&amp;list=PLmfeGbBvSVGCRbNKSk3QOh1v09h6YFyxU">German Let's Play of version 0.8 by myself</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/watch?v=G9VDrAAte84&amp;list=PLM18cnYYRV5OQRQFKEPbDKecc1qGdEYgW">German Let's Play of version 0.8 by MarlornLP</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/watch?v=uTruE__ia8A&amp;list=PLiUdDzmlSLTQl7a16tASao2Z50EcwJx_G">German Let's Play of version 0.7 by Faelon Stimmspiel</a>
+		</li>
+	</ul>
+	<h2>Links</h2>
+	<ul>
+		<li>
+			<a href="http://www.hiveworkshop.com/forums/map-development-202/power-fire-260235/">The Hive Workshop Thread</a>
+		</li>
+		<li>
+			<a href="http://warcraft.ingame.de/forum/forumdisplay.php?f=1066/">inWarcraft.de Forum (German)</a>
+		</li>
+	</ul>
+	<h2>Contact</h2>
+	<p>
+		Email: barade.barade [at] web.de
+	</p>
+</div>
+</body>
+</html>
