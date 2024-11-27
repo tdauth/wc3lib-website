@@ -5,158 +5,17 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 	<title>Warcraft III Library</title>
-	<link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
-<nav>
-	<ul>
-		<li>
-			wc3lib
-		</li>
-		<li>
-			<a href="https://github.com/tdauth/wc3lib">source code</a>
-		</li>
-		<li>
-			<a href="api/html/index.html">API</a>
-		</li>
-		<li>
-			<a href="mods.html">The Power of Fire</a>
-		</li>
-		<li>
-			<a href="maps.html">maps</a>
-		</li>
-		<li>
-			<a href="vjass.html">Advanced Script Library</a>
-		</li>
-		<li>
-			<a href="https://diemachtdesfeuers.wordpress.com/">blog</a>
-		</li>
-		<li>
-			<a href="spec.html">tools and specifications</a>
-		</li>
-		<li>
-			<a href="https://gustavsfairyland.wordpress.com/">Gustav's Fairyland</a>
-		</li>
-		<li>
-			<a href="https://github.com/tdauth/thecity">The City</a>
-		</li>
-		<li>
-			<a href="personal.html">personal website</a>
-		</li>
-		<li>
-			<a href="ebuilds.html">ebuilds</a>
-		</li>
-		<li>
-			<a href="https://blizzard.com/games/war3/">Warcraft III</a>
-		</li>
-	</ul>
-</nav>
-<div id="main_content">
-	<h1>Warcraft III Library</h1>
-	<p>
-		Warcraft III Library supports displaying models, textures or even maps from <a href="https://blizzard.com/">Blizzard's</a> game <a href="https://blizzard.com/games/war3/">Warcraft III: Reign of Chaos</a> and its expansion Warcraft III: The Frozen Throne.
-		It provides a core layer consisting of sub libraries which support reading and writing of those formats and as well a display layer which is able to emulate parts of Warcraft's famous World Editor.
-	</p>
-	<p>
-		wc3lib is written in C/C++. While its core layer takes heavily use of the <a href="http://www.boost.org/">Boost C++ Libraries</a>, the display layer is based on <a href="http://qt-project.org/">Qt</a>, <a href="http://kde.org/">KDE SC</a> and <a href="http://www.ogre3d.org/">OGRE</a>.
-	</p>
-
-	<h2>News</h2>
-	<p>
-		2016-10-14: The Qt based Object Editor allows compressing object data which means removing hidden fields from all objects. Besides it is planned to create an ObjectMerger emulator which fixes several bugs of the original ObjectMerger. wc3lib is also available on <a href="https://github.com/tdauth/wc3lib">GitHub</a> now.
-	</p>
-
-	<h2>Installation</h2>
-	<p>
-		For GNU/Linux distributions download the latest RPM <a href="./wc3lib-0.1.0-Linux.rpm">here</a>.<br/>
-		Most source code is put under the <a href="http://www.gnu.org/licenses/gpl-2.0.html">GPLv2</a> which guarantees you free usage.<br/>
-		It can be checked out using <a href="http://www.git-scm.com/">Git</a>:
-	</p>
-	<code>
-		git clone git://wc3lib.org/wc3lib.git
-	</code>
-	<p>
-		and compiled creating a compile directory, running CMake and Make:
-	</p>
-	<code>
-		cd wc3lib <br/>
-		mkdir build <br/>
-		cd build <br/>
-		cmake ../ <br/>
-		make -j4
-	</code>
-	<p>
-		or
-	</p>
-	<code>
-		make -j4 install
-	</code>
-
-	<p>
-		You can disable several options like "JASS" or "MDLX" using CMake if you want to reduce the compile time and don't need all the features.
-		wc3lib depends on several libraries:
-		<ul>
-			<li>Boost C++ Libraries</li>
-			<li>JPEG library</li>
-			<li>BZIP2 library</li>
-			<li>GZIP library</li>
-			<li>Qt5 libraries (editor module and plugin qblp)</li>
-			<li>OGRE library (MDLX support in editor module, Ogre BLP codec plugin)</li>
-			<li>KF5 libraries (KIO MPQ plugin)</li>
-		</ul>
-		If the requiring components are not compiled, the dependencies are not required.
-	</p>
-
-	<h2>Features</h2>
-	<p>wc3lib does already offer a list of features:</p>
-	<ul>
-		<li>File parsing and writing for MDX, MDL, BLP, MPQ, W3M, W3O, SLK, TXT etc.</li>
-		<li>BLP integration by a Qt plugin which allows KDE to display BLP images</li>
-		<li>Displaying static MDX or MDL files in a 3D renderer</li>
-		<li>KDE IO Slave for MPQ archives (allows usage with Dolphin etc.)</li>
-		<li>Console tools like wc3converter and mpq</li>
-		<li>GUI tools like MPQ Editor, Object Editor, Trigger Editor or Texture Editor</li>
-	</ul>
-
-	<h2>Examples</h2>
-	<p>
-		wc3lib comes with some useful tools such as an MPQ extractor and a format converter:
-	</p>
-
-	<code>
-		mpq -t war3.mpq
-	</code>
-	<p>
-		lists all files contained in "war3.mpq"
-	</p>
-
-	<code>
-		mpq -g -f "SharedModels\LightningBall.tga" war3.mpq
-	</code>
-	<p>
-		Extracts "LightningBall.tga" into directory "./war3/SharedModels/LightningBall"
-	</p>
-
-	<code>
-		wc3converter . TestModel.mdx --oformat mdl
-	</code>
-	<p>
-		Converts "TextModel.mdx" into MDL file "TestModel.mdl".
-	</p>
-
-	<h2>Screenshots</h2>
-	<a href="./screenshots/icons.png"><img src="/web/20170614195709im_/http://wc3lib.org/screenshots/thumb.icons.png" alt="BLP Icons in Gwenview"/></a>
-	<a href="./screenshots/modeleditor.png"><img src="/web/20170614195709im_/http://wc3lib.org/screenshots/thumb.modeleditor.png" alt="Custom Model Editor for MDX and MDL files"/></a>
-	<a href="./screenshots/mpqslave.png"><img src="/web/20170614195709im_/http://wc3lib.org/screenshots/thumb.mpqslave.png" alt="MPQ IO support in file manager Dolphin"/></a>
-	<a href="./screenshots/triggereditor.png"><img src="/web/20170614195709im_/http://wc3lib.org/screenshots/thumb.triggereditor.png" alt="Warcraft III Trigger Editor"/></a>
-	<a href="./screenshots/triggeraction.png"><img src="/web/20170614195709im_/http://wc3lib.org/screenshots/thumb.triggeraction.png" alt="Trigger action dialog"/></a>
-	<a href="./screenshots/objecteditor.png"><img src="/web/20170614195709im_/http://wc3lib.org/screenshots/thumb.objecteditor.png" alt="Object Editor"/></a>
-	<a href="./screenshots/abilities.png"><img src="/web/20170614195709im_/http://wc3lib.org/screenshots/thumb.abilities.png" alt="Abilities"/></a>
-	<a href="./screenshots/weathereditor.png"><img src="/web/20170614195709im_/http://wc3lib.org/screenshots/thumb.weathereditor.png" alt="Weather Editor"/></a>
-	<h2>Contact</h2>
-	<p>
-		Email: barade.barade [at] web.de
-	</p>
-</div>
+<h1>Warcraft III Library</h1>
+<p>
+	<a href="https://github.com/tdauth/wc3lib">Warcraft III Library</a> supports displaying models, textures or even maps from <a href="https://blizzard.com/">Blizzard's</a> game <a href="https://blizzard.com/games/war3/">Warcraft III: Reign of Chaos</a> and its expansion Warcraft III: The Frozen Throne.
+	It provides a core layer consisting of sub libraries which support reading and writing of those formats and as well a display layer which is able to emulate parts of Warcraft's famous World Editor.
+</p>
+<p>
+	wc3lib is written in C/C++.
+	Its core layer relies mostly on the standard libraries and <a href="http://www.boost.org/">Boost C++ Libraries</a>.
+	The UI libraries use <a href="http://qt-project.org/">Qt</a>, <a href="http://kde.org/">KDE SC</a> and <a href="http://www.ogre3d.org/">OGRE</a>.
+</p>
 </body>
 </html>
