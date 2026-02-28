@@ -1,3 +1,3 @@
 # wc3lib Website
 
-Official website: [wc3lib.org](http://wc3lib.org)
+Official [wc3lib](https://github.com/tdauth/wc3lib) website.
